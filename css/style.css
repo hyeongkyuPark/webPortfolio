@@ -1,0 +1,105 @@
+/*body*/
+body {
+    position: relative;
+    background: #202124;
+}
+
+/*cotainer*/
+.container {
+    position: relative;
+    padding: 0 0 0 6rem;
+}
+
+/*header*/
+.main-header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9999;
+    height: 5rem;
+    border-bottom: 1px solid #575757;
+}
+.main-header .main-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16rem;
+    height: 100%;
+    background: #464646;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.main-header .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 3em;
+    border-left: 1px solid #575757;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+/*global nav*/
+.gnb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vh;
+  height: 6rem;
+  border-bottom: 1px solid #575757;
+  
+  /* rotate 90° */
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: left top;
+}
+.gnb .gnb-list {
+    margin-left: 2em;
+}
+.gnb .gnb-list .gnb-item {
+    display: inline-block;
+    padding: 0 0.5em;
+}
+.gnb .gnb-list .gnb-item a {
+    color: #888;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.gnb .gnb-list .gnb-item.active a {
+    color: #fff;
+    font-weight: bold;
+}
+
+/*home-section*/
+.home-section {
+    height: 32rem;
+    padding: 7rem;
+}
+.home-section .text-area h2 {
+    margin-bottom: 0.3em;
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1.1em;
+}
+.home-section .text-area h2 em {
+    font-weight: bold;
+}
+.home-section .text-area p {
+    width: 30rem;
+    font-size: 0.9rem;
+    line-height: 1.4em;
+}
+.home-section .image-area {
+    position: absolute;
+    right: 5rem;
+    bottom: 0;
+    width: 28rem;
+    height: 40rem;
+    background: #2E3034;
+    z-index: -1;
+}
