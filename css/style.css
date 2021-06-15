@@ -120,3 +120,97 @@ body {
     background-position: center center;
     background-size: cover;
 }
+
+
+/* info-section */
+.info-section {
+    display: flex;
+    border-top: 1px solid #575757;
+}
+.info-section .text-area {
+    width: 50%;
+    padding: 5rem;
+    border-right: 1px solid #575757;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+.info-section .text-area h2 {
+    margin-bottom: 1.2em;
+    font-size: 3rem;
+    line-height: 1.3em;
+}
+.info-section .text-area h2 em {
+    font-weight: bold;
+}
+.info-section .text-area p {
+    width: 87%;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    word-break: keep-all;
+}
+.info-section .skill-slide {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-section .skill-slide .skill-wrap {
+    width: 20rem;
+    overflow: hidden;
+}
+.info-section .skill-slide .skill-list {
+    display: flex;
+    transition: transform 0.5s;
+}
+.info-section .skill-slide .skill-list .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+.info-section .skill-slide .skill-list .skill-item .skill-image {
+    width: 17rem;
+    height: 17rem;
+    margin-bottom: 1.2rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.info-section .skill-slide .skill-list .skill-item .skill-name {
+    width: 20rem;
+    font-size: 3rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.info-section .skill-slide .skill-list .skill-item .skill-level {
+    font-size: 5rem;
+    font-weight: bold;
+}
+.info-section .skill-slide .arrow-box {
+    position: absolute;
+    width: 100%;
+}
+.info-section .skill-slide .arrow-box .arrow {
+    cursor: pointer;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-image: url('../images/icon_arrow.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.info-section .skill-slide .arrow-box .arrow.left {
+    left: 4rem;
+}
+.info-section .skill-slide .arrow-box .arrow.right {
+    right: 4rem;
+    transform: rotate(180deg);
+}
+
