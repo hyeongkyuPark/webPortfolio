@@ -177,7 +177,7 @@ body {
     margin-bottom: 1.2rem;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 
 }
 .info-section .skill-slide .skill-list .skill-item .skill-name {
