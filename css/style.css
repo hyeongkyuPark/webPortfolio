@@ -350,3 +350,67 @@ body {
     height: 36rem;
     background: #ccc;
 }
+
+
+/* contact-section */
+.contact-section {
+    padding: 5rem;
+    border-top: 1px solid #868686;
+}
+.contact-section h2 {
+    margin-bottom: 0.7em;
+    font-size: 4.5rem;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+}
+.contact-section .contact-box {
+    display: flex;
+}
+.contact-section .contact-box .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+.contact-section .contact-box .contact-info h3 {
+    margin-bottom: 0.7em;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #F5C403;
+}
+.contact-section .contact-box .contact-info ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.7em;
+    font-size: 1.2rem;
+}
+.contact-section .contact-box .contact-info ul li span {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.3rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.contact-section .contact-box .contact-info .link-area {
+    margin-top: auto;
+}
+.contact-section .contact-box .contact-info .link-area a {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.contact-section .contact-box .contact-info .link-area a:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.contact-section .contact-box .contact-input {
+    width: 50%;
+    height: 400px;
+    background: #555;
+}
