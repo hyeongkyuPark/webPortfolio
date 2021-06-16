@@ -60,6 +60,15 @@ button {
     color: inherit;
 }
 
+input,
+textarea {
+	outline: none;
+    border: none;
+    resize: none;
+	color: inherit;
+	font-family: 'Montserrat', sans-serif;
+}
+
 .ir {
 	display: block;
     text-indent: -9999px;
