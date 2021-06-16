@@ -30,10 +30,10 @@
         <nav class="gnb">
             <!-- gnb-list -->
             <ul class="gnb-list">
-                <li class="gnb-item active"><a href="#">intro</a></li>
-                <li class="gnb-item"><a href="#">info</a></li>
-                <li class="gnb-item"><a href="#">project</a></li>
-                <li class="gnb-item"><a href="#">contact</a></li>
+                <li class="gnb-item active"><a href="#intro">intro</a></li>
+                <li class="gnb-item"><a href="#info">info</a></li>  
+                <li class="gnb-item"><a href="#project">project</a></li>
+                <li class="gnb-item"><a href="#contact">contact</a></li>
             </ul>
             <!-- //gnb-list -->
         </nav>
@@ -41,7 +41,7 @@
         <!-- main -->
         <main>
             <!-- home-section-start -->
-            <section>
+            <section id="intro">
                 <!-- home-container -->
                 <div class="container">
                     <!-- home-section -->
@@ -71,7 +71,7 @@
             </section>
             <!-- //home-section-end -->
             <!-- info-section-start -->
-            <section>
+            <section id="info">
                 <!-- info-container -->
                 <div class="container">
                     <!-- info-section -->
@@ -145,7 +145,7 @@
             </section>
             <!-- //info-section-end -->
             <!-- project-section-start -->
-            <section>
+            <section id="project">
                 <!-- project-container -->
                 <div class="container">
                     <!-- project-section -->
@@ -196,8 +196,8 @@
                                 </div>
                                 <!-- //text-area -->
                                 <div class="link-area">
-                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="#">visitedGithub</a>
-                                    <a style="background-image: url('./images/logo_browser.png');" class="ir" href="#">visitedSite</a>
+                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="https://github.com/hyeongkyuPark/Netflex-Clone"  target="_blank">visitedGithub</a>
+                                    <a style="background-image: url('./images/logo_browser.png');" class="ir" href="https://hyeongkyupark.github.io/Netflex-Clone/"  target="_blank">visitedSite</a>
                                 </div>
                             </div>
                             <!-- //title-area -->
@@ -261,8 +261,8 @@
                                 </div>
                                 <!-- //text-area -->
                                 <div class="link-area">
-                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="#">visitedGithub</a>
-                                    <a style="background-image: url('./images/logo_browser.png');" class="ir" href="#">visitedSite</a>
+                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="https://github.com/hyeongkyuPark/hongruizhen"  target="_blank">visitedGithub</a>
+                                    <a style="background-image: url('./images/logo_browser.png');" class="ir" href="http://phghosting.dothome.co.kr/hong/"  target="_blank">visitedSite</a>
                                 </div>
                             </div>
                             <!-- //title-area -->
@@ -326,8 +326,7 @@
                                 </div>
                                 <!-- //text-area -->
                                 <div class="link-area">
-                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="#">visitedGithub</a>
-                                    <a style="background-image: url('./images/logo_browser.png');" class="ir" href="#">visitedSite</a>
+                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="https://github.com/hyeongkyuPark/webtoons"  target="_blank">visitedGithub</a>
                                 </div>
                             </div>
                             <!-- //title-area -->
@@ -393,8 +392,8 @@
                                 </div>
                                 <!-- //text-area -->
                                 <div class="link-area">
-                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="#">visitedGithub</a>
-                                    <a style="background-image: url('./images/logo_browser.png');" class="ir" href="#">visitedSite</a>
+                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="#"  target="_blank">visitedGithub</a>
+                                    <a style="background-image: url('./images/logo_browser.png');" class="ir" href="#"  target="_blank">visitedSite</a>
                                 </div>
                             </div>
                             <!-- //title-area -->
@@ -448,7 +447,7 @@
             </section>
             <!-- //project-section-end -->
             <!-- contact-section-start -->
-            <section>
+            <section id="contact">
                 <!-- contact-container -->
                 <div class="container">
                     <!-- contact-section -->
@@ -465,17 +464,18 @@
                                     <li><span style="background-image: url('./images/icon_call.png');"></span>010-7383-0644</li>
                                 </ul>
                                 <div class="link-area">
-                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="#">githubLink</a>
-                                    <a style="background-image: url('./images/icon_gitbook.png');" class="ir" href="#">gitbookLink</a>
-                                    <a style="background-image: url('./images/icon_blog.png');" class="ir" href="#">blogLink</a>
+                                    <a style="background-image: url('./images/logo_github.png');" class="ir" href="https://github.com/hyeongkyuPark" target="_blank">githubLink</a>
+                                    <a style="background-image: url('./images/icon_gitbook.png');" class="ir" href="https://app.gitbook.com/@phg0644/s/javascript-nomadcoders/" target="_blank">gitbookLink</a>
+                                    <a style="background-image: url('./images/icon_blog.png');" class="ir" href="https://blog.naver.com/phg0644" target="_blank">blogLink</a>
                                 </div>
                             </div>
                             <!-- //contact-info -->
                             <!-- contact-form -->
                             <form class="contact-form" method="POST" action="https://formspree.io/phg0644@gmail.com" target="_blank">
-                                <input type="text" placeholder="your name">
-                                <input type="text" placeholder="your email">
+                                <input type="text" placeholder="your name" maxlength="20">
+                                <input type="text" placeholder="your email" maxlength="30">
                                 <textarea placeholder="message"></textarea>
+                                <button type="submit">send</button>
                             </form>
                             <!-- //contact-form -->
                         </div>
@@ -488,6 +488,41 @@
             <!-- //contact-section-end -->
         </main>
         <!-- //main -->
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <div class="main-footer">
+                    <div class="footer-top">
+                        <div class="greeting-area">
+                            <h2>
+                                THANK YOU<br/>
+                                FOR VIEWING<br/>
+                                MY PORTFOLIO
+                            </h2>
+                        </div>
+                        <div class="contact-area">
+                            <form class="contact-form" method="POST" action="https://formspree.io/phg0644@gmail.com" target="_blank">
+                                <label for="email">Please leave your email address.</label>
+                                <div class="inputbox">
+                                    <input type="text" name="email" placeholder="e-mail addrress">    
+                                    <button class="ir" type="submit">submitEmail</button>
+                                </div>
+                            </form>
+                            <div class="link-area">
+                                <a class="ir" href="#">githubLink</a>
+                                <a class="ir" href="#">gitbookLink</a>
+                                <a class="ir" href="#">blogLink</a>
+                                <a class="ir" href="#">scrollTop</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
     </div>
     <!-- //wrap -->
 

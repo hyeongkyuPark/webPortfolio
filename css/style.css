@@ -1,12 +1,14 @@
 /* html */
 html {
     font-size: 1.04vw;
+    scroll-behavior:smooth;
 }
 
 /*body*/
 body {
     position: relative;
     background: #202124;
+    scroll-behavior:smooth;
 }
 
 /*cotainer*/
@@ -58,6 +60,7 @@ body {
   width: 100vh;
   height: 6rem;
   border-bottom: 1px solid #575757;
+  z-index: 10;
   
   /* rotate 90° */
   transform: rotate(-90deg) translateX(-100%);
@@ -154,6 +157,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #272727;
 }
 .info-section .skill-slide .skill-wrap {
     width: 20rem;
@@ -364,11 +368,11 @@ body {
 
 /* contact-section */
 .contact-section {
-    padding: 5rem;
+    padding: 5rem 5rem 10rem;
     border-top: 1px solid #868686;
 }
 .contact-section h2 {
-    margin-bottom: 0.7em;
+    margin-bottom: 1em;
     font-size: 4.5rem;
     font-weight: 300;
     text-align: center;
@@ -425,14 +429,15 @@ body {
     background: #555;
 }
 .contact-section .contact-form {
+    position: relative;
     width: 50%;
 }
 .contact-section .contact-form input {
     width: 100%;
     font-size: 2rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: #000;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
 }
 .contact-section .contact-form textarea {
@@ -440,6 +445,46 @@ body {
     height: 15rem;
     font-size: 2rem;
     padding: 1rem;
-    background: #000;
+    background: rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
+}
+.contact-section .contact-form button {
+    position: absolute;
+    right: 0;
+    bottom: -7rem;
+    padding: 0.7rem 6rem;
+    background: #F5C403;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+}
+
+
+/* main-footer */
+.main-footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #575757;
+    background: #272727;
+}
+.main-footer .footer-top {
+    display: flex;
+}
+.main-footer .footer-top .greeting-area {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50%;
+    padding: 6rem;
+    border-right: 1px solid #575757;
+    box-sizing: border-box;
+}
+.main-footer .footer-top .greeting-area h2 {
+    font-size: 3rem;
+    line-height: 1.3em;
+}
+.main-footer .footer-top .link-area {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50%;
 }
