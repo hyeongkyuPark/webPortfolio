@@ -36,7 +36,6 @@
                 changeNavItem(navList, navList[i], index);
                 changeContentItem(project, i, index);
 
-                console.log('change~!!');
                 current[index] = i;
             });
         }
@@ -51,8 +50,6 @@
             // 객체 초기화
             current[i] = 0;
         }
-        
-        console.log(current);
     }
 
     init();

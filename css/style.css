@@ -355,7 +355,10 @@ body {
     background: #555;
 }
 .project-aricle .content-area .content-item.active {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
 }
 
 
