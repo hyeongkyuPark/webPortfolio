@@ -335,6 +335,7 @@ body {
     width: 25%;
 }
 .project-aricle .content-area .spec-list .spec-item {
+    cursor: pointer;
     margin-bottom: 2em;
     font-size: 0.85rem;
     font-weight: 300;
@@ -343,12 +344,18 @@ body {
 .project-aricle .content-area .spec-list .spec-item.active {
     color: #fff;
 }
-.project-aricle .content-area .content {
+.project-aricle .content-area .content-list {
     flex-grow: 0;
     flex-shrink: 0;
     width: 75%;
+}
+.project-aricle .content-area .content-item {
+    display: none;
     height: 36rem;
-    background: #ccc;
+    background: #555;
+}
+.project-aricle .content-area .content-item.active {
+    display: block;
 }
 
 
