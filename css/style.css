@@ -361,8 +361,14 @@ body {
 .project-aricle .content-area .content-item .w-30 {
     width: 30% !important;
 }
+.project-aricle .content-area .content-item .w-40 {
+    width: 40% !important;
+}
 .project-aricle .content-area .content-item .w-50 {
     width: 50% !important;
+}
+.project-aricle .content-area .content-item .w-60 {
+    width: 60% !important;
 }
 .project-aricle .content-area .content-item .w-70 {
     width: 70% !important;
@@ -385,18 +391,60 @@ body {
     flex-wrap: wrap;
     height: 100%;
 }
-.project-aricle .content-area .content-item .content .inner-content .content-image-wrap {
+.project-aricle .content-area .content-item .content .inner-content .content-wrap {
     width: 100%;
     padding: 0.5em 0.5em 0.5em 0;
     box-sizing: border-box;
 }
-.project-aricle .content-area .content-item .content .inner-content .content-image-wrap .content-image {
+.project-aricle .content-area .content-item .content .inner-content .content-wrap .content-image {
     width: 100%;
     height: 100%;
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
     box-sizing: border-box;
+}
+.project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text {
+    width: 100%;
+    padding-left: 3rem;
+    box-sizing: border-box;
+}
+.project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text .content-title {
+    margin-bottom: 0.5em;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+.project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text .content-title.big {
+    font-size: 2.8rem;
+    line-height: 1.3em;
+}
+.project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text p {
+    font-size: 1.3rem;
+    line-height: 1.4em;
+}
+.project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text p.small {
+    font-size: 1.15rem;
+    line-height: 1.4em;
+}
+.project-aricle .content-area .content-item .content .inner-content .axios-cheerio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 4rem 0;
+}
+.project-aricle .content-area .content-item .content .inner-content .axios-cheerio div {
+    width: 11rem;
+    height: 3.5rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.project-aricle .content-area .content-item .content .inner-content .content-text .axios-cheerio > p {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 /* contact-section */
