@@ -17,15 +17,42 @@ body {
     padding: 0 0 0 6rem;
 }
 
+    .site-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        z-index: 9999;
+        animation: test 2s forwards ;
+    }
+
+    @keyframes test {
+        from {
+            opacity: 1;
+            z-index: 9999;
+            background: rgb(85, 85, 85);
+        }
+        to {
+            opacity: 0;
+            z-index: -9999;
+            background: #202124;
+        }
+    }
+
 /*header*/
-.main-header { 
+.main-header {
+    top: -5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 9999;
+    z-index: 999;
     height: 5rem;
     border-bottom: 1px solid #575757;
+    animation: fadeInHeader 1s forwards;
+    animation-delay: 0.5s;
 }
 .main-header .main-title {
     display: flex;
@@ -56,11 +83,14 @@ body {
   justify-content: flex-start;
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: -5rem;
+  opacity: 0;
   width: 100vh;
   height: 6rem;
   border-bottom: 1px solid #575757;
   z-index: 10;
+  animation: fadeInNav 1s forwards;
+  animation-delay: 1s;
   
   /* rotate 90° */
   transform: rotate(-90deg) translateX(-100%);
@@ -70,39 +100,146 @@ body {
     margin-left: 2em;
 }
 .gnb .gnb-list .gnb-item {
+    cursor: pointer;
     display: inline-block;
     padding: 0 0.5em;
-}
-.gnb .gnb-list .gnb-item a {
     color: #888;
     font-weight: 300;
     text-transform: uppercase;
 }
-.gnb .gnb-list .gnb-item.active a {
+.gnb .gnb-list .gnb-item.active {
     color: #fff;
     font-weight: bold;
 }
 
-/*home-section*/
-.home-section {
+/*intro-section*/
+.intro-section {
     height: 32rem;
     padding: 7rem;
 }
-.home-section .text-area h2 {
+.intro-section .text-area h2 {
     margin-bottom: 0.3em;
     font-size: 6rem;
     font-weight: 300;
     line-height: 1em;
 }
-.home-section .text-area h2 em {
+.intro-section .text-area h2 span {
+    opacity: 0;
+    display: inline-block;
+    animation: wordFadeIn .7s forwards;
+}
+.intro-section .text-area h2 span:nth-child(1) {
+    animation-delay: .5s;
+}
+.intro-section .text-area h2 span:nth-child(2) {
+    animation-delay: .55s;
+}
+.intro-section .text-area h2 span:nth-child(3) {
+    animation-delay: .6s;
+}
+.intro-section .text-area h2 span:nth-child(4) {
+    animation-delay: .65s;
+}
+.intro-section .text-area h2 span:nth-child(5) {
+    animation-delay: .7s;
+}
+.intro-section .text-area h2 span:nth-child(6) {
+    animation-delay: .75s;
+}
+.intro-section .text-area h2 span:nth-child(7) {
+    animation-delay: .8s;
+}
+.intro-section .text-area h2 span:nth-child(8) {
+    animation-delay: .85s;
+}
+.intro-section .text-area h2 span:nth-child(9) {
+    animation-delay: .9s;
+}
+.intro-section .text-area h2 span:nth-child(10) {
+    animation-delay: .95s;
+}
+.intro-section .text-area h2 span:nth-child(11) {
+    animation-delay: 1s;
+}
+.intro-section .text-area h2 span:nth-child(12) {
+    animation-delay: 1.05s;
+}
+.intro-section .text-area h2 span:nth-child(13) {
+    animation-delay: 1.1s;
+}
+.intro-section .text-area h2 span:nth-child(14) {
+    animation-delay: 1.15s;
+}
+.intro-section .text-area h2 span:nth-child(15) {
+    animation-delay: 1.2s;
+}
+.intro-section .text-area h2 span:nth-child(16) {
+    animation-delay: 1.25s;
+}
+.intro-section .text-area h2 span:nth-child(17) {
+    animation-delay: 1.3s;
+}
+.intro-section .text-area h2 span:nth-child(18) {
+    animation-delay: 1.35s;
+}
+.intro-section .text-area h2 span:nth-child(19) {
+    animation-delay: 1.4s;
+}
+.intro-section .text-area h2 span:nth-child(20) {
+    animation-delay: 1.45s;
+}
+.intro-section .text-area h2 span:nth-child(21) {
+    animation-delay: 1.5s;
+}
+.intro-section .text-area h2 span:nth-child(22) {
+    animation-delay: 1.55s;
+}
+.intro-section .text-area h2 em span:nth-child(1) {
+    animation-delay: 1.6s;
+}
+.intro-section .text-area h2 em span:nth-child(2) {
+    animation-delay: 1.65s;
+}
+.intro-section .text-area h2 em span:nth-child(3) {
+    animation-delay: 1.7s;
+}
+.intro-section .text-area h2 em span:nth-child(4) {
+    animation-delay: 1.75s;
+}
+.intro-section .text-area h2 em span:nth-child(5) {
+    animation-delay: 1.8s;
+}
+.intro-section .text-area h2 em span:nth-child(6) {
+    animation-delay: 1.85s;
+}
+.intro-section .text-area h2 em span:nth-child(7) {
+    animation-delay: 1.9s;
+}
+.intro-section .text-area h2 em span:nth-child(8) {
+    animation-delay: 1.95s;
+}
+.intro-section .text-area h2 em span:nth-child(9) {
+    animation-delay: 2s;
+}
+.intro-section .text-area h2 em span:nth-child(10) {
+    animation-delay: 2.05s;
+}
+.intro-section .text-area h2 em span:nth-child(11) {
+    animation-delay: 2.1s;
+}
+.intro-section .text-area h2 em {
     font-weight: bold;
 }
-.home-section .text-area p {
+.intro-section .text-area p {
+    opacity: 0;
     width: 30rem;
     font-size: 0.9rem;
     line-height: 1.7em;
+    animation: wordFadeIn .7s forwards;
+    animation-delay: 2.5s;
 }
-.home-section .image-area {
+.intro-section .image-area {
+    opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,8 +252,10 @@ body {
     background: #2E3034;
     z-index: -1;
     box-sizing: border-box;
+    animation: wordFadeIn .7s forwards;
+    animation-delay: 2s;
 }
-.home-section .image-area .image-item {
+.intro-section .image-area .image-item {
     width: 100%;
     height: 100%;
     background: url('../images/img_profile.png');
@@ -653,4 +792,40 @@ body {
     font-size: 1.3rem;
     font-weight: 300;
     text-transform: uppercase;
+}
+
+
+
+/* animation */
+@keyframes wordFadeIn {
+    from {
+        transform: translateX(1em);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+        top: -5rem;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes fadeInNav {
+    from {
+        opacity: 0;
+        left: -5rem;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
 }
