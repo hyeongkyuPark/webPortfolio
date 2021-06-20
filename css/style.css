@@ -43,16 +43,34 @@ body {
 
 /*header*/
 .main-header {
-    top: -5rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    position: relative;
     z-index: 999;
+    background: #202124;
     height: 5rem;
-    border-bottom: 1px solid #575757;
-    animation: fadeInHeader 1s forwards;
-    animation-delay: 0.5s;
+}
+.main-header::after {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: #575757;
+    animation: borderIn 2s forwards;
+    animation-delay: 1s;
+}
+@keyframes borderIn {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
 }
 .main-header .main-title {
     display: flex;
@@ -64,16 +82,56 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-5rem);
+    animation: fadeInDown .5s forwards;
+    animation-delay: 2.5s;
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .main-header .menu-btn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     padding: 0 3em;
-    border-left: 1px solid #575757;
     font-size: 1.2rem;
     font-weight: 100;
+    box-sizing: border-box;
+}
+.main-header .menu-btn em {
+    opacity: 0;
+    transform: translateY(-5rem);
+    animation: fadeInDown .5s forwards;
+    animation-delay: 2.5s;
+}
+.main-header .menu-btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 0;
+    background: #575757;
+    animation: borderInMenu 1s forwards;
+    animation-delay: 2.5s;
+}
+@keyframes borderInMenu {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
 }
 
 /*global nav*/
@@ -83,21 +141,31 @@ body {
   justify-content: flex-start;
   position: fixed;
   top: 0px;
-  left: -5rem;
-  opacity: 0;
   width: 100vh;
   height: 6rem;
-  border-bottom: 1px solid #575757;
   z-index: 10;
-  animation: fadeInNav 1s forwards;
-  animation-delay: 1s;
   
   /* rotate 90° */
   transform: rotate(-90deg) translateX(-100%);
   transform-origin: left top;
 }
+.gnb::after {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: #575757;
+    animation: borderIn 2s forwards;
+    animation-delay: 1s;
+}
 .gnb .gnb-list {
     margin-left: 2em;
+    opacity: 0;
+    transform: translateY(-5rem);
+    animation: fadeInDown .5s forwards;
+    animation-delay: 2.5s;
 }
 .gnb .gnb-list .gnb-item {
     cursor: pointer;
@@ -115,7 +183,7 @@ body {
 /*intro-section*/
 .intro-section {
     height: 32rem;
-    padding: 7rem;
+    padding: 12rem 7rem 7rem;
 }
 .intro-section .text-area h2 {
     margin-bottom: 0.3em;
@@ -269,28 +337,106 @@ body {
     display: flex;
     border-top: 1px solid #575757;
 }
-.info-section .text-area {
+.info-section > .text-area {
     width: 50%;
     padding: 5rem;
     border-right: 1px solid #575757;
     font-weight: 300;
     box-sizing: border-box;
 }
-.info-section .text-area h2 {
+.info-section > .text-area h2 {
     margin-bottom: 1.2em;
-    font-size: 3rem;
+    font-size: 2.8rem;
     line-height: 1.3em;
 }
-.info-section .text-area h2 em {
+.info-section > .text-area h2 em {
     font-weight: bold;
 }
-.info-section .text-area p {
+.info-section > .text-area p {
     width: 87%;
     font-size: 1.2rem;
     line-height: 1.6em;
     word-break: keep-all;
 }
+/* skill - slider */
 .info-section .skill-slide {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #272727;
+}
+.info-section .skill-slide .skill-wrap {
+    width: 60%;
+    height: 15rem;
+}
+.info-section .skill-slide .skill-wrap .skill-list {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0px 2px 12px rgb(0 0 0 / 22%);
+    text-transform: uppercase;
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item:nth-child(1) {
+    top: -7.5rem;
+    transform: scale(0.75);
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item:nth-child(2) {
+    top: -6rem;
+    transform: scale(0.8);
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item:nth-child(3) {
+    top: -4.5rem;
+    transform: scale(0.85);
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item:nth-child(4) {
+    top: -3rem;
+    transform: scale(0.9);
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item:nth-child(5) {
+    top: -1.5rem;
+    transform: scale(0.95);
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item .skill-image {
+    width: 9rem;
+    height: 9rem;
+    margin-bottom: 1.2rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 1.5rem;
+    user-select: none;
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item .text-area {
+    text-align: center;
+    user-select: none;
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item .skill-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 1rem;
+}
+.info-section .skill-slide .skill-wrap .skill-list .skill-item .skill-level {
+    font-size: 3rem;
+    font-weight: 100;
+    color: #000;
+}
+
+/* .info-section .skill-slide {
     position: relative;
     width: 50%;
     display: flex;
@@ -355,8 +501,8 @@ body {
 .info-section .skill-slide .arrow-box .arrow.right {
     right: 4rem;
     transform: rotate(180deg);
-}
-
+} */
+    
 /* project-section */
 .project-section {
     
@@ -452,6 +598,7 @@ body {
     font-weight: 300;
     line-height: 1.7em;
     word-break: keep-all;
+    margin-bottom: 1.5em;
 }
 .project-aricle .link-area {
     display: flex;
@@ -808,24 +955,71 @@ body {
     }
 }
 
-@keyframes fadeInHeader {
-    from {
-        opacity: 0;
-        top: -5rem;
-    }
-    to {
-        opacity: 1;
-        top: 0;
-    }
+/* 내소개 대화창 */
+#my-intro {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 32rem;
+    top: 0.5rem;
+    z-index: 9999;
+    padding: 0rem;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+#my-intro .image-area {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: #ccc;
+    margin-right: .5rem;
 }
 
-@keyframes fadeInNav {
-    from {
+#my-intro .text-area {
+    position: relative;
+    padding: 0 1em;
+}
+#my-intro .text-area p {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 1em;
+    font-weight: bold;
+}
+#my-intro .text-area p::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: .5rem;
+    width: .1rem;
+    height: 100%;
+    background: #fff;
+    animation: cursorEffect .5s infinite alternate;
+}
+
+@keyframes cursorEffect {
+    from{
         opacity: 0;
-        left: -5rem;
     }
     to {
         opacity: 1;
-        left: 0;
+    }
+}
+@keyframes deleteCard {
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes upCard {
+    from {
+        top: -6.5rem;
+    } 
+    to {
+        top: -7.5rem;
     }
 }
