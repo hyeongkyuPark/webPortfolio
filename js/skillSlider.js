@@ -13,7 +13,6 @@
         if(current.moveX <= 0) {
             return;
         }
-        console.log(current.moveX);
         current.moveX -= 100;
         skillList.style.transform = `translateX(-${current.moveX}%)`;
     }
@@ -22,7 +21,6 @@
         if(current.moveX >= 100 * (skillCount-1)) {
             return;
         }
-        console.log(current.moveX);
         current.moveX += 100;
         skillList.style.transform = `translateX(-${current.moveX}%)`;
     }

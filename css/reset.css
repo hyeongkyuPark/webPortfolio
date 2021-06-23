@@ -3,11 +3,21 @@
    License: none (public domain)
 */
 
-@font-face{ 
-	font-family:ng; src:url(NanumGothic.eot); 
-	src:local(※), url(NanumGothic.woff) format(‘woff’);
-	unicode-range:U+AC00-U+D7A3;
+@font-face {
+    font-family: 'EliceDigitalBaeum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	unicode-range:U+AC00-D7A3;
 }
+@font-face {
+    font-family: 'EliceDigitalBaeum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+	unicode-range:U+AC00-D7A3;
+}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -29,7 +39,7 @@ time, mark, audio, video {
 	font: inherit;
     color: #fff;
 	vertical-align: baseline;
-	font-family:ng;
+	font-family: EliceDigitalBaeum, 'Montserrat';
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

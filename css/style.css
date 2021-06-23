@@ -44,9 +44,7 @@ body {
 /*header*/
 .main-header {
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     display: flex;
     justify-content: space-between;
     z-index: 999;
@@ -301,8 +299,9 @@ body {
 .intro-section .text-area p {
     opacity: 0;
     width: 30rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.7em;
+    word-break: keep-all;
     animation: wordFadeIn .7s forwards;
     animation-delay: 2.5s;
 }
@@ -354,7 +353,7 @@ body {
 }
 .info-section > .text-area p {
     width: 87%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.6em;
     word-break: keep-all;
 }
@@ -599,6 +598,33 @@ body {
     line-height: 1.7em;
     word-break: keep-all;
     margin-bottom: 1.5em;
+}
+.project-aricle .title-area .text-area .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-aricle .title-area .text-area .skill-list .skill-item {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    padding: 0 0.5rem 0.5rem 0;
+    box-sizing: border-box;
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .skill-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #575757;box-sizing: border-box;
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #ccc;
+    margin-right: 1rem;
 }
 .project-aricle .link-area {
     display: flex;
