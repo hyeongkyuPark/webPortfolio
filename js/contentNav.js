@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const projects = document.querySelectorAll('.project-aricle');
     // 각 프로젝트내의 선택된 인덱스를 담는 객체
     const current = {};
@@ -26,10 +26,10 @@
     // 클릭이벤트 추가해주는 함수
     function addChangeProjectEvnet(project, index) {
         const navList = project.querySelectorAll('.spec-item');
-        for(let i=0; i<navList.length; i++) {
-            navList[i].addEventListener('click', function() {
+        for (let i = 0; i < navList.length; i++) {
+            navList[i].addEventListener('click', function () {
                 // 이미 선택된 요소면 작동 X
-                if(current[index] === i) {
+                if (current[index] === i) {
                     return;
                 }
 
@@ -42,10 +42,9 @@
     }
 
     function init() {
-        console.log(projects);
         let name = 'asd';
 
-        for(let i=0; i<projects.length; i++) {
+        for (let i = 0; i < projects.length; i++) {
             addChangeProjectEvnet(projects[i], i);
             // 객체 초기화
             current[i] = 0;

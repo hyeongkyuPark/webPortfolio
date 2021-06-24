@@ -1,4 +1,4 @@
-(function() {
+(function () {
     const skillSlider = document.querySelector('.skill-slide');
     const skillList = skillSlider.querySelectorAll('.skill-item');
     const skillListElem = skillSlider.querySelector('.skill-list');
@@ -7,18 +7,18 @@
     let clicked = false;
     let clickClose = false;
     let max = 0;
-    
+
     function moveCard(elem, x) {
         elem.style.left = `${x}px`;
         elem.style.transform = `rotate(${x / 30}deg)`;
     }
-    
+
     function returnCard(elem) {
         elem.style.transition = '1s';
         elem.style.left = 0;
         elem.style.transform = `rotate(0)`;
     }
-    
+
     function deleteCard(elem) {
         clickClose = true;
         elem.style.transition = '0.5s'
@@ -45,8 +45,8 @@
             });
         }, 1000);
     }
-    
-    const init = function() {
+
+    const init = function () {
         skillList.forEach(function (elem) {
             elem.addEventListener('mousedown', function (e) {
                 console.log('down~!!', clickClose);
@@ -62,7 +62,7 @@
                 const skillList = skillSlider.querySelectorAll('.skill-item');
                 const deleteMax = max - max / 2;
                 console.log(deleteMax);
-        
+
                 if (this === skillList[skillList.length - 1] && !clickClose) {
                     if (moveX <= deleteMax) {
                         clicked = false;
@@ -106,7 +106,7 @@
                 const skillList = skillSlider.querySelectorAll('.skill-item');
                 const deleteMax = max - max / 2;
                 console.log(deleteMax);
-        
+
                 if (this === skillList[skillList.length - 1] && !clickClose) {
                     if (moveX <= deleteMax) {
                         clicked = false;

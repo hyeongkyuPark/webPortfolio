@@ -11,6 +11,11 @@ body {
     scroll-behavior:smooth;
 }
 
+ /* util */
+ .mobile-only {
+     display: none;
+ }
+
 /*cotainer*/
 .container {
     position: relative;
@@ -660,10 +665,14 @@ body {
 .project-aricle .content-area .spec-list .spec-item.active {
     color: #fff;
 }
+.project-aricle .content-area .content-wrap {
+    width: 75%;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
 .project-aricle .content-area .content-list {
     flex-grow: 0;
     flex-shrink: 0;
-    width: 75%;
 }
 .project-aricle .content-area .content-item {
     display: none;
@@ -731,6 +740,7 @@ body {
 .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text .content-title.big {
     font-size: 2.8rem;
     line-height: 3.5rem;
+    text-align: center;
 }
 .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text p {
     font-size: 1.3rem;
@@ -874,7 +884,7 @@ body {
 }
 .main-footer .footer-top .greeting-area h2 {
     font-size: 3rem;
-    line-height: 1.3rem;
+    line-height: 4rem;
 }
 .main-footer .footer-top .contact-area {
     display: flex;
@@ -1062,6 +1072,9 @@ body {
     .pc-only {
         display: none;
     }
+    .mobile-only {
+        display: inherit;
+    }
 
     /* container */
     .container {
@@ -1083,14 +1096,16 @@ body {
     }
     .intro-section .text-area h2 {
         font-size: 3.5rem;
+        line-height: 4rem;
+        margin-bottom: 1rem;
     }
     .intro-section .text-area p {
         font-size: 0.8rem;
-        line-height: 2rem;
+        line-height: 1.6rem;
     }
     .intro-section .image-area {
-        width: 25rem;
-        height: 35rem;
+        width: 22rem;
+        height: 33rem;
         padding: 3rem;
         right: 2rem;
     }
@@ -1180,7 +1195,7 @@ body {
     .project-section .project-list .project-item p {
         font-size: 0.7rem;
         width: 100%;
-        line-height: 2rem;
+        line-height: 1.5rem;
         color: #868686;
     }
 
@@ -1198,7 +1213,7 @@ body {
     .project-aricle .title-area .text-area h3 {
         font-size: 2rem;
         font-weight: 300;
-        margin-bottom: 0.4rem;
+        margin-bottom: 1.5rem;
     }
     .project-aricle .title-area .text-area h3 em {
         font-weight: 900;
@@ -1228,5 +1243,133 @@ body {
         height: 2.5rem;
         background: #ccc;
         margin-right: 1rem;
+    }
+    .project-aricle .content-area {
+        padding: 0;
+    }
+    .project-aricle .content-area .content-wrap {
+        width: 100%;
+    }
+    .project-aricle .content-area > .content-wrap {
+        position: relative;
+        padding-bottom:2rem;
+    }
+    .project-aricle .content-area > .content-wrap .content-controller {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 1.5rem;
+        width: 100%;
+        height: 2rem;
+    }
+    .project-aricle .content-area > .content-wrap .content-controller .content-control-item {
+        width: 1.5rem;
+        height: 1.5rem;
+        background: rgba(206, 206, 206, 0.5);
+        border-radius: 50%;
+    }
+    .project-aricle .content-area > .content-wrap .content-controller .content-control-item.active {
+        background: #fff;
+    }
+    .project-aricle .content-area > .content-wrap .content-controller .content-control-item:not(:last-child) {
+        margin-right: 0.5rem;
+    }
+    .project-aricle .content-area .content-list {
+        display: flex;
+        align-items: center;
+    }
+    .project-aricle .content-area .content-item {
+        display: flex;
+        flex: 0 0 100%;
+        height: auto;
+        padding: 3rem;
+        box-sizing: border-box;
+    }
+    .project-aricle .content-area .content-item .w-30 {
+        width: 100% !important;
+    }
+    .project-aricle .content-area .content-item .w-40 {
+        width: 100% !important;
+    }
+    .project-aricle .content-area .content-item .w-50 {
+        width: 100% !important;
+    }
+    .project-aricle .content-area .content-item .w-60 {
+        width: 100% !important;
+    }
+    .project-aricle .content-area .content-item .w-70 {
+        width: 100% !important;
+    }
+    .project-aricle .content-area .content-item .content {
+        padding: 0;
+    }
+    .project-aricle .content-area .content-item .content:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+    .project-aricle .content-area .content-item .content .content-title {
+        margin-bottom: 1rem;
+    }
+    .project-aricle .content-area .content-item .content .inner-content {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap {
+        padding: 0;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-image {
+        width: 100%;
+        height: 20em;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        box-sizing: border-box;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap:not(:last-child) .content-image {
+        margin-bottom: 2rem;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-image.small {
+        height: 10em;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text {
+        width: 100%;
+        padding-left: 0;
+        box-sizing: border-box;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text .content-title {
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text .content-title.big {
+        width: 100%;
+        font-size: 2rem;
+        line-height: auto;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text p {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-wrap .content-text p.small {
+        font-size: 1.15rem;
+        line-height: 1.4rem;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .axios-cheerio {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 2rem 0;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .axios-cheerio div {
+        width: 11rem;
+        height: 3.5rem;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .project-aricle .content-area .content-item .content .inner-content .content-text .axios-cheerio > p {
+        font-size: 2rem;
+        font-weight: bold;
     }
 }
