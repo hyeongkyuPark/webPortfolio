@@ -1115,25 +1115,40 @@
 
             console.log(controllerLists);
             const init = function () {
-                controllerLists.forEach(function (controller) {
-
-                });
-
                 contentLists.forEach(function (contentList) {
+                    const controllerElem = contentList.nextElementSibling;
+                    const controllerList = controllerElem.querySelectorAll('.content-control-item');
                     let startX = 0;
                     let moveX = 0;
                     let currentX = 0;
                     let moveRange = 0;
                     let maxX = 0;
-                    let controller = 0;
+
+                    controllerElem.addEventListener('click', function (e) {
+                        if (e.target.tagName === 'LI') {
+                            const current = controllerElem.querySelector('.active');
+
+                            if (current !== e.target) {
+                                const elemeWidth = contentList.getBoundingClientRect().width;
+                                const clickIndex = [...controllerList].indexOf(e.target);
+
+                                current.classList.remove('active');
+                                controllerList[clickIndex].classList.add('active');
+                                currentX = -(elemeWidth * clickIndex);
+                                contentList.style.transition = `${SLIDE_SPEED}s`;
+                                contentList.style.transform = `translateX(${currentX}px)`;
+                            }
+
+                        }
+                    });
                     contentList.addEventListener('touchstart', function (e) {
-                        const elemeWidth = this.getBoundingClientRect().width;
+                        const elemeWidth = contentList.getBoundingClientRect().width;
                         console.log(moveX);
                         moveX = 0;
                         startX = e.touches[0].clientX;
                         moveRange = elemeWidth / PAGING_STEP;
-                        this.style.transition = 'none';
-                        maxX = -(this.scrollWidth - elemeWidth);
+                        contentList.style.transition = 'none';
+                        maxX = -(contentList.scrollWidth - elemeWidth);
                     });
                     contentList.addEventListener('touchmove', function (e) {
                         moveX = e.touches[0].clientX - startX;
@@ -1143,14 +1158,15 @@
                             moveX = 0;
                         }
                         console.log(moveX + currentX, maxX);
-                        this.style.transform = `translateX(${moveX + currentX}px)`;
+                        contentList.style.transform = `translateX(${moveX + currentX}px)`;
                     });
                     contentList.addEventListener('touchend', function (e) {
-                        console.log(controller);
-                        const controllerElem = this.nextElementSibling;
+                        const controlItems = controllerElem.querySelectorAll('.content-control-item');
                         const currentItem = controllerElem.querySelector('.active');
-                        console.log(currentItem.classList);
-                        let next = controller;
+
+                        let current = [...controlItems].indexOf(currentItem);
+                        console.log(current);
+                        let next = current;
                         if (moveX <= -moveRange) {
                             currentX = -(moveRange * PAGING_STEP) + currentX;
                             next++;
@@ -1158,15 +1174,13 @@
                             currentX = (moveRange * PAGING_STEP) + currentX;
                             next--;
                         }
-                        if (next !== controller) {
-                            const controlItems = controllerElem.querySelectorAll('.content-control-item');
-                            console.log(controlItems);
+                        if (next !== current) {
                             currentItem.classList.remove('active');
                             controlItems[next].classList.add('active');
-                            controller = next;
+                            current = next;
                         }
-                        this.style.transition = `${SLIDE_SPEED}s`;
-                        this.style.transform = `translateX(${currentX}px)`;
+                        contentList.style.transition = `${SLIDE_SPEED}s`;
+                        contentList.style.transform = `translateX(${currentX}px)`;
                     })
                 });
             };
