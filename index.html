@@ -1113,17 +1113,22 @@
             const PAGING_STEP = 3;
             const SLIDE_SPEED = 0.5;
 
-            let startX = 0;
-            let moveX = 0;
-            let currentX = 0;
-            let moveRange = 0;
-            let maxX = 0;
-            let controller = 0;
             console.log(controllerLists);
             const init = function () {
+                controllerLists.forEach(function (controller) {
+
+                });
+
                 contentLists.forEach(function (contentList) {
+                    let startX = 0;
+                    let moveX = 0;
+                    let currentX = 0;
+                    let moveRange = 0;
+                    let maxX = 0;
+                    let controller = 0;
                     contentList.addEventListener('touchstart', function (e) {
                         const elemeWidth = this.getBoundingClientRect().width;
+                        console.log(moveX);
                         moveX = 0;
                         startX = e.touches[0].clientX;
                         moveRange = elemeWidth / PAGING_STEP;
@@ -1141,6 +1146,7 @@
                         this.style.transform = `translateX(${moveX + currentX}px)`;
                     });
                     contentList.addEventListener('touchend', function (e) {
+                        console.log(controller);
                         const controllerElem = this.nextElementSibling;
                         const currentItem = controllerElem.querySelector('.active');
                         console.log(currentItem.classList);
