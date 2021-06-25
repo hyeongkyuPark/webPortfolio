@@ -10,6 +10,11 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -27,11 +32,19 @@
         <!-- header -->
         <header class="main-header">
             <h1 class="main-title">portfolio</h1>
-            <button class="menu-btn" type="button"><em>MENU</em></button>
+            <button class="menu-btn" type="button"><em>MENU</em><em>MENU CLOSE</em></button>
         </header>
         <!-- //header -->
         <!-- gnb -->
         <nav class="gnb pc-only">
+            <!-- gnb-list -->
+            <ul class="gnb-list">
+                <li name="intro" class="gnb-item active">intro</li>
+                <li name="info" class="gnb-item">info</li>
+                <li name="project" class="gnb-item">project</li>
+                <li name="contact" class="gnb-item">contact</li>
+            </ul>
+            <!-- //gnb-list -->
             <!-- gnb-list -->
             <ul class="gnb-list">
                 <li name="intro" class="gnb-item active">intro</li>
@@ -1006,44 +1019,34 @@
                 <div class="container">
                     <!-- contact-section -->
                     <div class="contact-section">
-                        <h2>contacts</h2>
-                        <!-- contact-box -->
-                        <div class="contact-box">
-                            <!-- contact-info -->
-                            <div class="contact-info">
-                                <h3>contact me</h3>
-                                <ul>
-                                    <li><span style="background-image: url('./images/icon_gps.png');"></span>경기도 안산시 단원구
-                                        초지 1로 78</li>
-                                    <li><span
-                                            style="background-image: url('./images/icon_email.png');"></span>phg0644@gmail.com
-                                    </li>
-                                    <li><span
-                                            style="background-image: url('./images/icon_call.png');"></span>010-7383-0644
-                                    </li>
-                                </ul>
-                                <div class="link-area">
-                                    <a style="background-image: url('./images/logo_github.png');" class="ir"
-                                        href="https://github.com/hyeongkyuPark" target="_blank">githubLink</a>
-                                    <a style="background-image: url('./images/icon_gitbook.png');" class="ir"
-                                        href="https://app.gitbook.com/@phg0644/s/javascript-nomadcoders/"
-                                        target="_blank">gitbookLink</a>
-                                    <a style="background-image: url('./images/icon_blog.png');" class="ir"
-                                        href="https://blog.naver.com/phg0644" target="_blank">blogLink</a>
+                        <div class="title-area">
+                            <h2>contact ME</h2>
+                        </div>
+                        <div class="contact-area">
+                            <div class="info-area">
+                                <div class="contact-info-item">
+                                    <div style="background-image: url('./images/icon_call.png');" class="image"></div>
+                                    <h3>phone</h3>
+                                    <p>010-7383-0644</p>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div style="background-image: url('./images/icon_gps.png');" class="image"></div>
+                                    <h3>address</h3>
+                                    <p>경기도 안산시 단원구 초지1로 78</p>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div style="background-image: url('./images/icon_email.png');" class="image"></div>
+                                    <h3>email</h3>
+                                    <p>phg0644@gmail.com</p>
                                 </div>
                             </div>
-                            <!-- //contact-info -->
-                            <!-- contact-form -->
-                            <form class="contact-form" method="POST" action="https://formspree.io/phg0644@gmail.com"
-                                target="_blank">
-                                <input type="text" placeholder="your name" maxlength="20">
-                                <input type="text" placeholder="your email" maxlength="30">
-                                <textarea placeholder="message"></textarea>
-                                <button type="submit">send</button>
+                            <form class="contact-form">
+                                <input id="contact-name" class="contact-input" type="text" placeholder="your name" />
+                                <input id="contact-email" class="contact-input" type="email" placeholder="your email" />
+                                <textarea id="contact-message" placeholder="message"></textarea>
+                                <input type="submit" value="send" />
                             </form>
-                            <!-- //contact-form -->
                         </div>
-                        <!-- //contact-box -->
                     </div>
                     <!-- //contact-section -->
                 </div>
@@ -1098,6 +1101,11 @@
         <!-- //footer -->
     </div>
     <!-- //wrap -->
+    <div class="container">
+        <div class="menu-box">
+    
+        </div>
+    </div>
     <script src="./js/skillSlider.js"></script>
     <script src="./js/contentNav.js"></script>
     <script src="./js/gnbNavigator.js"></script>
@@ -1105,89 +1113,8 @@
     <!-- <script src="https://unpkg.com/hangul-js" type="text/javascript"></script>
     <script src="./js/myInfoInput.js"></script> -->
     <script src="./js/skillPanel.js"></script>
-
-    <script>
-        (function () {
-            const contentLists = document.querySelectorAll('.content-list');
-            const controllerLists = document.querySelectorAll('.content-controller');
-            const PAGING_STEP = 3;
-            const SLIDE_SPEED = 0.5;
-
-            console.log(controllerLists);
-            const init = function () {
-                contentLists.forEach(function (contentList) {
-                    const controllerElem = contentList.nextElementSibling;
-                    const controllerList = controllerElem.querySelectorAll('.content-control-item');
-                    let startX = 0;
-                    let moveX = 0;
-                    let currentX = 0;
-                    let moveRange = 0;
-                    let maxX = 0;
-
-                    controllerElem.addEventListener('click', function (e) {
-                        if (e.target.tagName === 'LI') {
-                            const current = controllerElem.querySelector('.active');
-
-                            if (current !== e.target) {
-                                const elemeWidth = contentList.getBoundingClientRect().width;
-                                const clickIndex = [...controllerList].indexOf(e.target);
-
-                                current.classList.remove('active');
-                                controllerList[clickIndex].classList.add('active');
-                                currentX = -(elemeWidth * clickIndex);
-                                contentList.style.transition = `${SLIDE_SPEED}s`;
-                                contentList.style.transform = `translateX(${currentX}px)`;
-                            }
-
-                        }
-                    });
-                    contentList.addEventListener('touchstart', function (e) {
-                        const elemeWidth = contentList.getBoundingClientRect().width;
-                        console.log(moveX);
-                        moveX = 0;
-                        startX = e.touches[0].clientX;
-                        moveRange = elemeWidth / PAGING_STEP;
-                        contentList.style.transition = 'none';
-                        maxX = -(contentList.scrollWidth - elemeWidth);
-                    });
-                    contentList.addEventListener('touchmove', function (e) {
-                        moveX = e.touches[0].clientX - startX;
-                        if (moveX >= 0 && currentX === 0) {
-                            moveX = 0;
-                        } else if (moveX + currentX <= maxX) {
-                            moveX = 0;
-                        }
-                        console.log(moveX + currentX, maxX);
-                        contentList.style.transform = `translateX(${moveX + currentX}px)`;
-                    });
-                    contentList.addEventListener('touchend', function (e) {
-                        const controlItems = controllerElem.querySelectorAll('.content-control-item');
-                        const currentItem = controllerElem.querySelector('.active');
-
-                        let current = [...controlItems].indexOf(currentItem);
-                        console.log(current);
-                        let next = current;
-                        if (moveX <= -moveRange) {
-                            currentX = -(moveRange * PAGING_STEP) + currentX;
-                            next++;
-                        } else if (moveX >= moveRange) {
-                            currentX = (moveRange * PAGING_STEP) + currentX;
-                            next--;
-                        }
-                        if (next !== current) {
-                            currentItem.classList.remove('active');
-                            controlItems[next].classList.add('active');
-                            current = next;
-                        }
-                        contentList.style.transition = `${SLIDE_SPEED}s`;
-                        contentList.style.transform = `translateX(${currentX}px)`;
-                    })
-                });
-            };
-
-            init();
-        })();
-    </script>
+    <script src="./js/mobileProjectSlider.js"></script>
+    <script src="./js/menuSlide.js"></script>
 </body>
 
 </html>
