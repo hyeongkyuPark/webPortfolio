@@ -1087,13 +1087,159 @@ body {
 }
 
 /* menu-box */
-.menu-box {
+.menu-top {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    padding: 5rem 0 0 6rem;
     background: #272727;
+    transform: translateY(-100%);
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+.menu-top .inner {
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30%);
+    transition: 0.5s;
+}
+.menu-top.opend .inner {
+    opacity: 1;
+    transform: translateY(0);
+}
+.menu-top .inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 1px;
+    background: #575757;
+    transition: 0.5s;
+}
+.menu-top.opend .inner::after {
+    height: 60%;
+}
+.menu-top .inner .menu-content {
+    width: 50%;
+    padding: 30px;
+}
+.menu-top .inner .menu-content  h2 {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 8px;
+}
+.menu-top .inner .menu-content > h2 {
+    margin-bottom: 25px;
+}
+.menu-top .inner .menu-content .menu-projectList {
+
+}
+.menu-top .inner .menu-content .menu-projectList li {
+    margin-bottom: 30px;
+}
+.menu-top .inner .menu-content .menu-projectList li a {
+    font-size: 25px;
+}
+.menu-top .inner .menu-content .menu-myinfo li {
+    margin-bottom: 30px;
+}
+.menu-top .inner .menu-content .menu-myinfo li p {
+    font-size: 16px;
+}
+
+.menu-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    padding: 0 0 0 6rem;
+    transform: translateY(100%);
+    transition: 0.5s;
+    box-sizing: border-box;
+}
+.menu-bottom .inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+.menu-bottom .inner .title-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    border-right: 1px solid #eee;
+    padding: 0 2rem;
+}
+.menu-bottom .inner .skill-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+
+.menu-bottom .inner .title-box h2 {
+    color: #222;
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+.menu-bottom .inner .title-box .menu-skill-controller {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.menu-bottom .inner .title-box .menu-skill-controller .menu-arrow {
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    background: url('../images/icon_arrow_bk.png') no-repeat center center;
+    background-size: contain;
+}
+.menu-bottom .inner .title-box .menu-skill-controller .menu-arrow.right {
+    transform: rotate(180deg) translateY(-0.05rem);
+}
+
+.menu-bottom .inner .skill-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.menu-bottom .inner .skill-box .menu-skill-list {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.menu-bottom .inner .skill-box .menu-skill-list .menu-skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50%;
+    height: 100%;
+}
+.menu-bottom .inner .skill-box .menu-skill-list .menu-skill-item:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+.menu-bottom .inner .skill-box .menu-skill-list .menu-skill-item .skill-image {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.menu-bottom .inner .skill-box .menu-skill-list .menu-skill-item .skill-name {
+    font-size: 30px;
+    font-weight: 300;
+    color: #222;
 }
 
 @media (max-width: 500px) {
@@ -1462,5 +1608,13 @@ body {
         font-size: 1.3rem;
         font-weight: 300;
         text-transform: uppercase;
+    }
+
+    /* menu-box */
+    .menu-top {
+        padding: 5rem 0 0 0;
+    }    
+    .menu-bottom {
+        padding: 0;
     }
 }
