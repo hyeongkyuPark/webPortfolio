@@ -65,8 +65,22 @@ table {
 	border-spacing: 0;
 }
 a {
+    position: relative;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+}
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: .5s;
+}
+a:hover::after {
+    width: 100%;
 }
 button {
     outline: none;

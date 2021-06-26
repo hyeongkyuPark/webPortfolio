@@ -641,8 +641,56 @@ body {
     flex-shrink: 0;
     width: 2.5rem;
     height: 2.5rem;
-    background: #ccc;
+    background-image: url('../images/logo_html.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
     margin-right: 1rem;
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.html {
+    background-image: url('../images/logo_html.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.css {
+    background-image: url('../images/logo_css.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.js {
+    background-image: url('../images/logo_javascript.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.jq {
+    background-image: url('../images/logo_jquery.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.fa {
+    background-image: url('../images/logo_html.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.vue {
+    background-image: url('../images/img_vue.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.mq {
+    background-image: url('../images/logo_mq.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.vuex {
+    background-image: url('../images/img_vuex.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.react {
+    background-image: url('../images/logo_react.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.redux {
+    background-image: url('../images/logo_redux.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.sql {
+    background-image: url('../images/logo_sql.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.ts {
+    background-image: url('../images/logo_ts.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.sc {
+    background-image: url('../images/logo_sc.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.ex {
+    background-image: url('../images/logo_ex.png');
+}
+.project-aricle .title-area .text-area .skill-list .skill-item .image.axios {
+    background-image: url('../images/logo_axios.png');
 }
 .project-aricle .link-area {
     display: flex;
@@ -978,7 +1026,7 @@ body {
     border-right: none;
     box-sizing: border-box;
 }
-.main-footer .footer-top .link-area a:last-child::after {
+.main-footer .footer-top .link-area a:last-child span::after {
     content: '';
     display: block;
     width: 1.5rem;
@@ -986,6 +1034,19 @@ body {
     background: url('../images/icon_arrow.png') no-repeat center center;
     background-size: contain;
     transform: rotate(90deg);
+}
+.main-footer .footer-top .link-area a {
+    position: relative;
+    z-index: 1;
+}
+.main-footer .footer-top .link-area a::after {
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+}
+.main-footer .footer-top .link-area a:hover::after {
+    background: rgba(158, 158, 158, 0.432);
 }
 .main-footer .footer-bottom {
     padding: 5rem 3rem;
@@ -1174,14 +1235,28 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 30%;
+    transform: translateY(50%);
+    opacity: 0;
     border-right: 1px solid #eee;
     padding: 0 2rem;
+    transition: .3s;
 }
 .menu-bottom .inner .skill-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 70%;
+    transform: translateY(50%);
+    opacity: 0;
+    transition: .3s;
+}
+.menu-bottom.opend .inner .title-box {
+    opacity: 1;
+    transform: translateY(0);
+}
+.menu-bottom.opend .inner .skill-box {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .menu-bottom .inner .title-box h2 {
@@ -1229,8 +1304,8 @@ body {
     border-right: 1px solid #eee;
 }
 .menu-bottom .inner .skill-box .menu-skill-list .menu-skill-item .skill-image {
-    width: 150px;
-    height: 150px;
+    width: 10rem;
+    height: 10rem;
     margin-right: 20px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -1435,12 +1510,8 @@ body {
         border: 1px solid #575757;box-sizing: border-box;
     }
     .project-aricle .title-area .text-area .skill-list .skill-item .image {
-        flex-grow: 0;
-        flex-shrink: 0;
         width: 2.5rem;
         height: 2.5rem;
-        background: #ccc;
-        margin-right: 1rem;
     }
     .project-aricle .content-area {
         padding: 0;
