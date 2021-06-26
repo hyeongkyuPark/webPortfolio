@@ -103,3 +103,15 @@ textarea {
 	display: block;
     text-indent: -9999px;
 }
+
+/* 스무스 스크롤 */
+.supah-scroll {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    will-change: transform;
+    overflow: hidden;
+  }
