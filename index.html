@@ -160,7 +160,7 @@
                                             class="skill-image"></div>
                                         <div class="text-area">
                                             <h3 class="skill-name">react</h3>
-                                            <p class="skill-level">관심</p>
+                                            <p class="skill-level">70%</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -1070,7 +1070,7 @@
                         </div>
                         <div class="footer-bottom">
                             <ul class="footer-nav">
-                                <li class="footer-nav-item"><a href="#">intor</a></li>
+                                <li class="footer-nav-item"><a href="#">intro</a></li>
                                 <li class="footer-nav-item"><a href="#">info</a></li>
                                 <li class="footer-nav-item"><a href="#">project</a></li>
                                 <li class="footer-nav-item"><a href="#">contact</a></li>
@@ -1163,13 +1163,14 @@
         const scriptScrollHandler = function (e) {
             const scrollTop = window.pageYOffset;
             const scriptTop = scriptSection.getBoundingClientRect().top + scrollTop;
-            console.log(scriptList.scrollWidth);
             if (scrollTop >= scriptTop) {
                 scriptList.style.position = 'fixed';
                 scriptSection.style.height = `${scriptList.scrollWidth}px`;
-                const max = scriptList.querySelector('li').offsetWidth * (scriptList.querySelectorAll('li').length - 1);
-                if (-max <= scriptTop - scrollTop) {
+                const max = -(scriptList.querySelector('li').offsetWidth * (scriptList.querySelectorAll('li').length - 1));
+                if (max <= scriptTop - scrollTop) {
                     scriptList.style.transform = `translateX(${scriptTop - scrollTop}px)`;
+                } else {
+                    scriptList.style.transform = `translateX(${max}px)`;
                 }
             } else {
                 scriptList.style.position = 'absolute';
