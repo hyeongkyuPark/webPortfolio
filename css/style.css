@@ -838,6 +838,12 @@ body {
     border-top: 1px solid #575757;
     overflow: hidden;
 }
+#script h2 {
+    padding: 2rem 0 2rem 10rem;
+    font-size: 4rem;
+    z-index: 1;
+    border-top: 1px solid #575757;
+}
 .script-section .script-list {
     position: absolute;
     top: 0;
@@ -845,16 +851,66 @@ body {
     display: flex;
     width: 100%;
     height: 100vh;
+    box-sizing: border-box;
 }
 .script-section .script-list .script-item {
     display: flex;
     flex: 0 0 auto;
-    align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100%;
-    font-size: 10rem;
-    background: #ccc;
+    padding: 10rem 4rem 0 10rem;
+    box-sizing: border-box;
+}
+.script-section .script-list .script-item .text-area {
+    width: 35%;
+    padding: 0 3rem 0 0;
+}
+.script-section .script-list .script-item .text-area h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.script-section .script-list .script-item .text-area ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.script-section .script-list .script-item .text-area ul li {
+    padding: 0.5rem;
+    border: 1px solid #fff;
+    margin-bottom: 0.5rem;
+}
+.script-section .script-list .script-item .text-area ul li:not(:last-child) {
+    margin-right: 0.5rem;
+}
+.script-section .script-list .script-item .text-area p {
+    font-size: 1.3rem;
+    line-height: 1.4em;
+    margin-bottom: 1.5rem;
+}
+.script-section .script-list .script-item .text-area .link-box a {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.script-section .script-list .script-item .text-area .link-box a::after {
+    display: none;
+}
+.script-section .script-list .script-item .text-area .link-box a.git {
+    background-image: url('../images/logo_github.png');
+    margin-right: 1rem;
+}
+.script-section .script-list .script-item .text-area .link-box a.site {
+    background-image: url('../images/logo_browser.png');
+}
+.script-section .script-list .script-item .image-area {
+    width: 65%;
+    background: url('../images/img_musictube.gif') no-repeat top center;
+    background-size: contain;
 }
 
 /* main-footer */

@@ -1015,10 +1015,37 @@
             <!-- //project-section-end -->
             <!--- script-section -->
             <section id="script">
+                <h2>MINI PROJECTS</h2>
                 <div class="script-section">
                     <ul class="script-list">
                         <li class="script-item">
-                            1
+                            <div class="text-area">
+                                <h3>MusicTube</h3>
+                                <ul>
+                                    <li>React</li>
+                                    <li>Typescript</li>
+                                    <li>Styled-Components</li>
+                                    <li>Redux</li>
+                                    <li>Redux-saga</li>
+                                    <li>Redux-toolkit</li>
+                                    <li>React-youtube</li>
+                                    <li>youtube data API</li>
+                                </ul>
+                                <p>
+                                    유튜브 데이터 API를 이용하여 구현한 간단한 API 통신 프로젝트입니다.<br />
+                                    첫화면에서는 유튜브 인기 동영상을 보여주고, 원하는 단어로 검색하면 원하는 음악을 선택하여
+                                    들을 수 있습니다.
+                                </p>
+                                <div class="link-box">
+                                    <a class="git" href="https://github.com/hyeongkyuPark/musictube-code"
+                                        target="_blank" rel="noopner" or rel="noreferrer"></a>
+                                    <a class="site" href="https://hyeongkyupark.github.io/musictube/" target="_blank"
+                                        rel="noopner" or rel="noreferrer"></a>
+                                </div>
+                            </div>
+                            <div class="image-area">
+
+                            </div>
                         </li>
                         <li class="script-item">
                             2
@@ -1166,10 +1193,12 @@
             if (scrollTop >= scriptTop) {
                 scriptList.style.position = 'fixed';
                 scriptSection.style.height = `${scriptList.scrollWidth}px`;
-                const max = -(scriptList.querySelector('li').offsetWidth * (scriptList.querySelectorAll('li').length - 1));
+                const max = -(scriptList.querySelector('li').offsetWidth * (scriptList.querySelectorAll('.script-item').length - 1));
+                console.log(max, scriptTop - scrollTop);
                 if (max <= scriptTop - scrollTop) {
                     scriptList.style.transform = `translateX(${scriptTop - scrollTop}px)`;
                 } else {
+                    console.log('asdsa');
                     scriptList.style.transform = `translateX(${max}px)`;
                 }
             } else {
